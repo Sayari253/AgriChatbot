@@ -67,6 +67,8 @@ def predict():
         test.append(str(j))
     entity = ""
     for w in input[0].split():
+        if re.match(w.lower(),'purple'):
+            w = 'brinjal'
         for c in test:
             if re.match(w.lower(),c.lower()):
                 entity=c
@@ -75,6 +77,8 @@ def predict():
         crp = data.loc[i, 'Crop']
         ent = data.loc[i, 'QueryType']
         if crp == entity and ent == output:
+            r = data.loc[i,'KccAns']
+        elif ent == output and crp!=entity:
             r = data.loc[i,'KccAns']
     resp = Translator().translate(r,dest = l).text
     print('Query: ', input)    
