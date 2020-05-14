@@ -68,7 +68,7 @@ def predict():
     entity = ""
     for w in input[0].split():
         for c in test:
-            if re.match(w,c):
+            if re.match(w.lower(),c.lower()):
                 entity=c
 
     for i in range(len(data)):
