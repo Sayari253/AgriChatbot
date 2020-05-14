@@ -69,6 +69,10 @@ def predict():
     for w in input[0].split():
         if re.match(w.lower(),'purple'):
             w = 'brinjal'
+        if re.match(w.lower(),'eggplant'):
+            w = 'brinjal'
+        if re.match(w.lower(),'gram') or re.match(w.lower(),'blackgram'):
+            w = 'black gram'
         for c in test:
             if re.match(w.lower(),c.lower()):
                 entity=c
