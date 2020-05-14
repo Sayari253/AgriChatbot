@@ -78,8 +78,6 @@ def predict():
         ent = data.loc[i, 'QueryType']
         if crp == entity and ent == output:
             r = data.loc[i,'KccAns']
-        elif ent == output and crp!=entity:
-            r = data.loc[i,'KccAns']
     resp = Translator().translate(r,dest = l).text
     print('Query: ', input)    
     print('Answer: ', resp.encode())
